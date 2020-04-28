@@ -49,7 +49,7 @@ protected:
 
 template<HASH_TYPE H> struct HashOps {};
 
-#ifndef OPENSSL_NO_SHA0
+#ifdef OPENSSL_SHA0
 template<>
 struct HashOps<SHA0>
 {

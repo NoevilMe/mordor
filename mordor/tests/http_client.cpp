@@ -2946,15 +2946,15 @@ MORDOR_UNITTEST(HTTPConnectionNoCache, getDifferentConnection)
     ioManager.stop();
 }
 
-MORDOR_UNITTEST(HTTPConnectionNoCache, getDifferentSSLConnection)
-{
-    StreamBroker::ptr broker(new DummySSLStreamBroker());
-    ConnectionNoCache::ptr noCache(new ConnectionNoCache(broker, NULL));
-    noCache->verifySslCertificateHost(false);
-    ClientConnection::ptr conn1 = noCache->getConnection("https://localhost/").first;
-    ClientConnection::ptr conn2 = noCache->getConnection("https://localhost/").first;
-    MORDOR_TEST_ASSERT_NOT_EQUAL(conn1->stream().get(), conn2->stream().get());
-}
+//MORDOR_UNITTEST(HTTPConnectionNoCache, getDifferentSSLConnection)
+//{
+    //StreamBroker::ptr broker(new DummySSLStreamBroker());
+    //ConnectionNoCache::ptr noCache(new ConnectionNoCache(broker, NULL));
+    //noCache->verifySslCertificateHost(false);
+    //ClientConnection::ptr conn1 = noCache->getConnection("https://localhost/").first;
+    //ClientConnection::ptr conn2 = noCache->getConnection("https://localhost/").first;
+    //MORDOR_TEST_ASSERT_NOT_EQUAL(conn1->stream().get(), conn2->stream().get());
+//}
 
 MORDOR_UNITTEST(HTTPConnectionNoCache, regardlessForceNewConnectionParam)
 {

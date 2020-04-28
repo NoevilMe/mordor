@@ -27,7 +27,7 @@ MORDOR_UNITTEST(MD5Stream, knownMD5)
 }
 
 
-#ifndef OPENSSL_NO_SHA0
+#ifdef OPENSSL_NO_SHA0
 MORDOR_UNITTEST(SHA0Stream, empty)
 {
     HashStream::ptr hashStream(new SHA0Stream(NullStream::get_ptr()));
